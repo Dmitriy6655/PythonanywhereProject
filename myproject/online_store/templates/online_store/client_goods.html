@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ title }} | {{ block.super }}{% endblock %}
+{% block h1 %}
+<h1>Заказы</h1>
+{% endblock h1 %}
+{% block main %}
+
+<hr>
+
+<form method="post" method="post" enctype="multipart/form-data">
+    {% csrf_token %}>
+    <label>
+        {{ text }}
+        <input type="number" name="number">
+    </label>
+    <input type="submit" class="btn btn-secondary" value="OK">
+</form>
+
+
+
+<p> Имя клиента: {{ client.name }} </p>
+<h3>Заказы за последние 7 дней</h3>
+<p2>Продукты в заказах:<br>
+    {{ orders7 }}</p2>
+
+
+<h3>Заказы за последние 30 дней</h3>
+<p2>Продукты в заказах:<br>
+    {{ orders30 }}<br>
+  </p2>
+
+
+<h3>Заказы за последние 365 дней</h3>
+<p2>Продукты в заказах:<br>
+    {{ orders365 }}<br>
+    </p2>
+
+
+{% endblock %}
+

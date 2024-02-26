@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Каталог | {{ block.super }}{% endblock %}
+{% block h1 %}
+<!--Все заказы клиента {{ client.name | capfirst }}:-->
+{% endblock h1 %}
+{% block main %}
+<h3>Заказы:</h3>
+<ul id="id01">
+    {% for order in orders %}
+
+    <li>
+        <a>
+            Заказ:  {{ order }}<br>
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+</div>
+{% endblock main %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Каталог | {{ block.super }}{% endblock %}
+{% block h1 %}
+<!--Все заказы клиента {{ client.name | capfirst }}:-->
+{% endblock h1 %}
+{% block main %}
+<h3>Клиенты:</h3>
+<ul>
+    {% for client in clients %}
+    <li>
+        <a>ID = {{ client.id }}, {{ client.name }}<br> {{ client.address }}<br>
+            {{ client.phone }}<br>Дата рег.: {{ client.date_reg }}</a>
+            <br>
+    </li>
+    {% endfor %}
+</ul>
+</div>
+{% endblock main %}

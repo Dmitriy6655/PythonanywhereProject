@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ title }} | {{ block.super }}{% endblock %}
+{% block h1 %}
+{% endblock h1 %}
+{% block main %}
+<h3>Покупка товаров:</h3>
+
+
+<form method="post" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label>
+
+        {{ text4 }}
+        {% for client in clients %}
+        <li>
+        <a> ID = {{ client.id }}; {{ client.name }}</a>
+        </li>
+        {% endfor %}
+        <br>
+        {{ text }}<br>{{ client.name }}<br>
+
+        <input type="number" name="number">
+        <br><br><a> {{ text3 }} <br> {{ text2 }} {{ buy.name }}</a><br>
+        <input type="number" name="id_prod"><br>
+        Количество: <br>
+        <input  type="number" name="amount"><br>
+        <input ID клиента type="submit" class="btn btn-dark" value="Купить"><br>
+
+    </label>
+
+    <ul>
+        {% for good in goods %}
+        <li>
+            <b><a> ID = {{ good.id }}, {{ good.name }} </a>
+
+                <div> ЦЕНА: {{ good.price }}, остаток: {{ good.quantity }}</div>
+<!--                <div style=“width: 30px; height: 20px”> ЦЕНА: {{ good.price }}, остаток: {{ good.quantity }}</div>-->
+                <br>
+
+            </b>
+        </li>
+        {% endfor %}
+
+    </ul>
+    </form>
+
+{% endblock main %}
