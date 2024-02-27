@@ -19,13 +19,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
+# SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY ='6779e4dd730df5cca579f079e76f21c3ae79d91b8f95b878d6d8e6102f1bc4ef'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
@@ -82,7 +83,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'Timofey777$default',
         'USER': 'Timofey777',
-        'PASSWORD': os.getenv('MYSQL_PASSWORD'),
+        # 'PASSWORD': os.getenv('MYSQL_PASSWORD'),
+        'PASSWORD': 'wMf25^.G_q2w%eu',
         'HOST': 'Timofey777.mysql.pythonanywhere-services.com',
         'OPTIONS': {
             'init_command': "SET NAMES 'utf8mb4';SET sql_mode='STRICT_TRANS_TABLES'",
